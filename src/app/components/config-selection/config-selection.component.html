@@ -1,0 +1,57 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col text-center">
+      <h2>Step 2: Select your config and options</h2>
+    </div>
+  </div>
+
+  <!-- Configuration Selection -->
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="configSelect" class="form-label">Config:</label>
+        <select class="form-select" id="configSelect" (change)="onConfigChange($event)" formControlName="configSelect">
+          <option *ngFor="let config of configs" value="{{ config.id }}">{{ config.description }}</option>
+        </select>
+      </div>
+      <!-- ... existing code ... -->
+
+      <!-- Conditionally display Tow Hitch option based on the model property -->
+      <div class="col-md-6 mb-3">
+        <label for="includeTow" class="form-label">Tow hitch?</label>
+        <input type="checkbox" id="includeTow" (change)="onCheckChange($event)" formControlName="includeTow">
+      </div>
+
+      <!-- Conditionally display Yoke Steering Wheel option based on the model property -->
+      <div class="col-md-6 mb-3">
+        <label for="includeYoke" class="form-label">Yoke steering wheel?</label>
+        <input type="checkbox" id="includeYoke" (change)="onCheckChange($event)" formControlName="includeYoke">
+      </div>
+
+      <!-- ... existing code ... -->
+
+    </div>
+  </form>
+
+  <!-- Configuration Details -->
+  <div class="row">
+    <div class="col">
+      <p>Range: {{ form.value.configSelectModel?.range }} miles - Max speed: {{ form.value.configSelectModel?.speed }}
+        mph - Cost:
+        ${{ form.value.configSelectModel?.price }}</p>
+    </div>
+  </div>
+
+
+
+  @if(getSelectedCarImageUrl()) {
+  <div class="row">
+    <div class="col">
+      <img [src]="getSelectedCarImageUrl()" class="img-fluid" alt="Selected Car Image">
+    </div>
+  </div>
+  }
+
+
+
+</div>

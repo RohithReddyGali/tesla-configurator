@@ -1,0 +1,21 @@
+.container {
+  margin: auto;
+  max-width: fit-content; /* Adjust the width as needed */
+}
+h1 {
+  text-align: center;
+  font-size: 2rem; /* Adjust the font-size as needed */
+  margin-bottom: 1rem;
+}
+
+/* Custom styling for the form elements */
+.form-select {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+}
+/* Image styles */
+.img-fluid {
+  max-width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+}

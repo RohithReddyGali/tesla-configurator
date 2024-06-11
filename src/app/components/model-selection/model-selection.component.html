@@ -1,0 +1,36 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Step 1: Choose your Model and Color</h1>
+    </div>
+  </div>
+
+  <!-- Model and Color Selection -->
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="modelSelect" class="form-label">Model:</label>
+        <select class="form-select" id="modelSelect" (change)="onModelChange($event)" formControlName="modelSelect">
+          <option *ngFor="let model of models" value="{{ model.code }}">{{ model.description }}</option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="colorSelect" class="form-label">Color:</label>
+        <select class="form-select" id="colorSelect" (change)="onColorChange($event)" formControlName="colorSelect"
+          [disabled]="!form.get('modelSelect')?.value">
+          <option *ngFor="let color of colors" value="{{ color.code }}">{{ color.description }}</option>
+        </select>
+      </div>
+    </div>
+  </form>
+
+  <!-- Car Image -->
+  @if(getSelectedCarImageUrl()) {
+  <div class="row">
+    <div class="col">
+      <img [src]="getSelectedCarImageUrl()" class="img-fluid" alt="Selected Car Image">
+    </div>
+  </div>
+  }
+
+</div>

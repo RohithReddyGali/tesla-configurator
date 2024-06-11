@@ -1,0 +1,17 @@
+.summary-container .col-12 {
+    padding-top: 20px; /* more emphasis on total cost */
+    padding-bottom: 20px; /* adds space between the total cost and the image below it */
+    font-weight: bold; /* makes the total cost bold */
+  }
+  
+  /* If you also want to ensure there's a minimum distance from the image regardless of screen size */
+  .img-fluid {
+    margin-top: 20px; /* adds space above the image */
+  }
+  .col-md-6.mb-3 > strong {
+    margin-right: 10px; /* Adjust the value as needed */
+  }
+  .total-cost-label {
+    margin-right: 10px; /* Adjust the value as needed */
+  }
+  

@@ -1,0 +1,6 @@
+<nav class="nav nav-pills flex-column flex-sm-row">
+    <a class="flex-sm-fill text-sm-center nav-link" routerLink="/step1">Step-1</a>
+    <a class="flex-sm-fill text-sm-center nav-link" [class.disabled]="!step2Active" routerLink="/step2">Step-2</a>
+    <a class="flex-sm-fill text-sm-center nav-link" [class.disabled]="!step3Active" routerLink="/step3">Step-3</a>
+</nav>
+<router-outlet></router-outlet>

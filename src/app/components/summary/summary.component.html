@@ -1,0 +1,41 @@
+<div class="container my-5">
+  <div class="row" style="margin: 10px;">
+    <div class="col text-center">
+      <h2><strong>Summary</strong> </h2>
+    </div>
+  </div>
+  <div class="summary-container">
+    <div class="row  mb-20" >
+      <div class="col-md-6 mb-3">
+        <strong>Your Tesla :</strong> <span>{{ summary.currentModel.description }}</span>
+      </div>
+      <div class="col-md-6 mb-3">
+        <strong>Base Model:</strong> <span>{{ summary.modelSelect }}</span>
+      </div>
+      <div class="col-md-6 mb-3">
+        <strong>Configuration:</strong> <span>{{ summary.configSelectModel?.description }} {{
+          summary.configSelectModel?.price }}</span>
+      </div>
+      <div class="col-md-6 mb-3">
+        <strong>Color:</strong> <span>{{ colorObject.description }} {{ colorObject.price | currency }}</span>
+      </div>
+      <div class="col-md-6 mb-3">
+        <strong>Tow Hitch:</strong> <span>{{ summary.includeTow }}</span>
+      </div>
+      <div class="col-md-6 mb-3">
+        <strong>Yoke Steering:</strong> <span>{{ summary.includeYoke }}</span>
+      </div>
+     <div class="col-12">
+  <span class="total-cost-label"><strong>Total Cost:</strong></span>
+  <span class="total-cost-value">{{ total | currency}}</span>
+</div>
+    </div>
+  </div>
+  @if(getSelectedCarImageUrl()) {
+  <div class="row">
+    <div class="col">
+      <img [src]="getSelectedCarImageUrl()" class="img-fluid" alt="Selected Car Image">
+    </div>
+  </div>
+  }
+</div>
